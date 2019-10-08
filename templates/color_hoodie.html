@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+</style>
+<body>
+
+<div class="content">
+  <!-- Page content -->
 
 <a href="/">Back to Home</a>
 
-<h1>White Hoodie</h1>
+<h1>Color Hoodie</h1>
 
 
 <form action="/color" method="POST">
@@ -13,5 +23,7 @@
     Image URL: <input type="text" name="img_url"><br>
     <button type="submit">Submit</button><br>
 </form>
+</div>
 
+</body>
 {% endblock %}

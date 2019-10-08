@@ -4,7 +4,7 @@
 
 <a href="/">Back to Home</a>
 
-<h1>Orange Hoodie: {{candy.name}}</h1>
+<h1> Hoodie: {{hoodie.name}}</h1>
 
 <img src="{{hoodie.img_url}}"><br>
 
@@ -14,7 +14,7 @@ Cost: ${{hoodie.price}}
 <a href="/edit/{{hoodie._id}}">Edit Hoodie</a>
 
 <br><br>
-<form action="/delete/{{candy._id}}" method="POST">
+<form action="/delete/{{hoodie._id}}" method="POST">
     <button type="submit">Delete Hoodie</button>
 </form>
 
