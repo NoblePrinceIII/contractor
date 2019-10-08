@@ -17,10 +17,27 @@ def index():
     """Return homepage."""
     return render_template('index.html', hoodies=hoodie_collection.find())
 
-@app.route('/new')
-def new_hoodie():
+@app.route('/red')
+def red_hoodie():
     """Return new hoodie creation page."""
-    return render_template('new_hoodie.html')
+    return render_template('red_hoodie.html')
+
+@app.route('/blue')
+def blue_hoodie():
+    """Return new hoodie creation page."""
+    return render_template('blue_hoodie.html')
+
+@app.route('/color')
+def color_hoodie():
+    """Return new hoodie creation page."""
+    return render_template('color_hoodie.html')
+
+@app.route('/white')
+def white_hoodie():
+    """Return new hoodie creation page."""
+    return render_template('white_hoodie.html')
+
+
 
 
 
