@@ -6,11 +6,18 @@
 
 <a href="/new">New Hoodie</a>
 
+<div class="row">
+  <div class="column">
+    <img src="https://wallpaperstream.com/wallpapers/full/scary/Man-Wearing-Red-Hoodie-Scary-HD-Wallpaper.jpg" style="width:24.5%"height="90%" >
+    <img src="https://wallpapersite.com/images/pages/pic_h/17658.jpg" style="width:24.5%"height="90%">
+    <img src="http://hdqwalls.com/wallpapers/neon-mask-hoodie-4k-ma.jpg" style="width:24.5%"height="90%">
+    <img src="https://images.pexels.com/photos/1482476/pexels-photo-1482476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width:24.5%"height="90%">
+  </div>
 <ul>
-{% for candy in candies %}
+{% for hoodie in hoodies%}
 
     <li>
-        <a href="/candy/{{candy._id}}">{{candy.name}}</a>
+        <a href="/hoodie/{{hoodie._id}}">{{hoodie.name}}</a>
     </li>
 
 {% endfor %}
