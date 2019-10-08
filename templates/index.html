@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Hoodie Store</h1>
+
+<a href="/new">New Hoodie</a>
+
+<ul>
+{% for candy in candies %}
+
+    <li>
+        <a href="/candy/{{candy._id}}">{{candy.name}}</a>
+    </li>
+
+{% endfor %}
+</ul>
+
+{% endblock %}
