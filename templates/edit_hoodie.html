@@ -6,7 +6,7 @@
 
 <h1>Edit Hoodie</h1>
 
-<form action="/edit/{{hoodie._id}}" method="POST">
+<form action="/{{hoodie._id}}" method="POST">
     Name of Hoodie: <input type="text" name="name" value="{{hoodie.name}}"><br>
     Price of Hoodie: <input type="number" name="price" value="{{hoodie.price}}"><br>
     Image URL: <input type="text" name="img_url" value="{{hoodie.img_url}}"><br>

@@ -44,10 +44,33 @@ def blue_hoodie():
     return render_template('blue_hoodie.html')
 
 
+@app.route('/blue', methods=['POST'])
+def create_hoodie_blue():
+    """Make a new hoodie according to user's specifications."""
+    hoodie = {
+        'name': request.form.get('name'),
+        'price': request.form.get('price'),
+        'img_url': request.form.get('img_url')
+    }
+    hoodie_id = hoodies_collection.insert_one(hoodie).inserted_id
+    return redirect(url_for('show_hoodie', hoodie_id=hoodie_id))
+
+
 @app.route('/color')
 def color_hoodie():
     """Return new hoodie creation page."""
     return render_template('color_hoodie.html')
+
+@app.route('/color', methods=['POST'])
+def create_hoodie_color():
+    """Make a new hoodie according to user's specifications."""
+    hoodie = {
+        'name': request.form.get('name'),
+        'price': request.form.get('price'),
+        'img_url': request.form.get('img_url')
+    }
+    hoodie_id = hoodies_collection.insert_one(hoodie).inserted_id
+    return redirect(url_for('show_hoodie', hoodie_id=hoodie_id))
 
 
 @app.route('/white')
@@ -56,13 +79,28 @@ def white_hoodie():
     return render_template('white_hoodie.html')
 
 
+@app.route('/white', methods=['POST'])
+def create_hoodie_white():
+    """Make a new hoodie according to user's specifications."""
+    hoodie = {
+        'name': request.form.get('name'),
+        'price': request.form.get('price'),
+        'img_url': request.form.get('img_url')
+    }
+    hoodie_id = hoodies_collection.insert_one(hoodie).inserted_id
+    return redirect(url_for('show_hoodie', hoodie_id=hoodie_id))
+
+
+
+
+
 @app.route('/hoodie/<hoodie_id>')
 def show_hoodie(hoodie_id):
     """Show a single hoodie."""
     hoodie = hoodies_collection.find_one({'_id': ObjectId(hoodie_id)})
     return render_template('show_hoodie.html', hoodie=hoodie)
 
-
+@app.route('/<hoodie_id>', methods=['POST'])
 def update_hoodie(hoodie_id):
     """Edit page for a hoodie."""
     new_hoodie = {
