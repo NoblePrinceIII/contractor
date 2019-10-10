@@ -18,6 +18,7 @@ def index():
     """Return homepage."""
     return render_template('index.html', hoodies=hoodies_collection.find())
 
+
 @app.route('/red')
 def red_hoodie():
     """Return new hoodie creation page."""
@@ -62,7 +63,7 @@ def update_hoodie(hoodie_id):
 def edit_hoodie(hoodie_id):
     """Page to submit an edit on a hoodie."""
     hoodie = hoodies_collection.find_one({'_id': ObjectId(hoodie_id)})
-    return render_template('edit_hoodie.html', hoodie=hoodie )
+    return render_template('edit_hoodie.html', hoodie=hoodie)
 
 
 @app.route('/delete/<hoodie_id>', methods=['POST'])
