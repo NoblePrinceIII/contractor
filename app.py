@@ -91,14 +91,12 @@ def create_hoodie_white():
     return redirect(url_for('show_hoodie', hoodie_id=hoodie_id))
 
 
-
-
-
 @app.route('/hoodie/<hoodie_id>')
 def show_hoodie(hoodie_id):
     """Show a single hoodie."""
     hoodie = hoodies_collection.find_one({'_id': ObjectId(hoodie_id)})
     return render_template('show_hoodie.html', hoodie=hoodie)
+
 
 @app.route('/<hoodie_id>', methods=['POST'])
 def update_hoodie(hoodie_id):
