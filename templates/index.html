@@ -4,6 +4,8 @@
 
 <h1>Hoodie Store</h1>
 
+  <marquee> Click Image to Create New Item </marquee>
+
 
 <div class="row">
   <div class="column">
@@ -24,7 +26,7 @@
 {% for hoodie in hoodies%}
 
     <li>
-        <a href="/hoodie/{{hoodie._id}}">{{hoodie.name}}</a>
+      <a href="/hoodie/{{hoodie._id}}">{{hoodie.name}}</a>
     </li>
 
 {% endfor %}
