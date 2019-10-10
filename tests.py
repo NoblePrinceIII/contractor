@@ -18,10 +18,8 @@ sample_form_data = {
 
 class HoodieTest(TestCase):
     """Flask tests."""
-
     def setUp(self):
         """Stuff to do before every test."""
-
         # Get the Flask test client
         self.client = app.test_client()
         # Show Flask errors that happen during tests
@@ -53,31 +51,6 @@ class HoodieTest(TestCase):
         result = self.client.post(f'/delete/{sample_listing_id}', data=form_data)
         self.assertEqual(result.status, '302 FOUND')
         mock_delete.assert_called_with({'_id': sample_listing_id})
-
-
-
-
-    # @mock.patch('pymongo.collection.Collection.find_one')
-    # def test_edit_hoodie(self, mock_find):
-    #     """Test editing a single Hoodie."""
-    #     mock_find.return_value = sample_listing
-    #     result = self.client.get(f'{sample_listing_id}')
-    #     self.assertEqual(result.status, '200 OK')
-    #     self.assertIn(b'Hoodie', result.data)
-
-
-
-    #     # After submitting, should redirect to that hoodie's page
-    #     self.assertEqual(result.status, '302 FOUND')
-    #     mock_insert.assert_called_with(sample_listing)
-    #
-    # @mock.patch('pymongo.collection.Collection.update_one')
-    # def test_update_hoodie(self, mock_update):
-    #     result = self.client.post(f'/{sample_listing_id}', data=sample_form_data)
-    #
-    #     self.assertEqual(result.status, '302 FOUND')
-    #     mock_update.assert_called_with({'_id': sample_listing_id}, {'$set': sample_listing})
-    #
 
 
 if __name__ == '__main__':
